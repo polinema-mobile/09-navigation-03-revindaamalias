@@ -2,9 +2,8 @@
 <layout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools">
-
-	<!--definisi variabel data pada fragment_score.xml yang digunakan untuk menyimpan data skor-->
+	xmlns:tools="http://schemas.android.com/tools"
+	>
 	<data>
 		<variable
 			name="homeGoalScorerList"
@@ -22,28 +21,25 @@
 		android:layout_height="match_parent"
 		tools:context=".fragments.ScoreFragment">
 
-		<!--menghitung score-->
 		<TextView
-			android:id="@+id/txtHome"
+			android:id="@+id/textView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="16dp"
-			android:text="@{String.valueOf(homeGoalScorerList.size())}"
-			android:textSize="64sp"
-			app:layout_constraintBottom_toTopOf="@+id/guideline"
+			android:text="Home"
+			android:textSize="36sp"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
 
 		<TextView
-			android:id="@+id/txtAway"
+			android:id="@+id/textView2"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="112dp"
-			android:text="@{String.valueOf(awayGoalScorerList.size())}"
-			android:textSize="64sp"
+			android:layout_marginTop="16dp"
+			android:text="Away"
+			android:textSize="36sp"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintHorizontal_bias="0.498"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -67,8 +63,8 @@
 			android:layout_marginStart="8dp"
 			android:layout_marginEnd="8dp"
 			android:layout_marginBottom="16dp"
-			android:onClick="@{(v) -> fragment.onAddAwayClick(v)}"
 			android:text="Add Score Away"
+			android:onClick="@{(v) -> fragment.onAddAwayClick(v)}"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0.0"
@@ -86,6 +82,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="64sp"
+			android:text="@{String.valueOf(homeGoalScorerList.size())}"
 			app:layout_constraintBottom_toTopOf="@+id/guideline"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +93,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="64sp"
+			android:text="@{String.valueOf(awayGoalScorerList.size())}"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
@@ -103,48 +101,22 @@
 
 		<TextView
 			android:id="@+id/text_home_scorer"
+			android:text="@{fragment.homeSc}"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="8dp"
-			android:text="@{fragment.home}"
 			app:layout_constraintBottom_toTopOf="@+id/button_add_home"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" />
 
 		<TextView
 			android:id="@+id/text_away_scorer"
+			android:text="@{fragment.awaySc}"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="8dp"
-			android:text="@{fragment.away}"
 			app:layout_constraintBottom_toTopOf="@+id/button_add_away"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" />
-
-		<TextView
-			android:id="@+id/textHome2"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
-			android:layout_marginTop="8dp"
-			android:layout_marginEnd="8dp"
-			android:text="Home"
-			android:textSize="36sp"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
-
-		<TextView
-			android:id="@+id/textAway2"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
-			android:layout_marginTop="8dp"
-			android:layout_marginEnd="8dp"
-			android:text="Away"
-			android:textSize="36sp"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/button_add_home" />
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
